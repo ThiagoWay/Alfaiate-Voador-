@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+      
+      function validarLogin () {
+        var usuario = document.getElementById("usuario").value
+        var senha = document.getElementById("senha").value
+        var mensagemTexto = document.getElementById("mensagem");
+
+        if (usuario === "alice" && senha === "12345") {
+            mensagemTexto.textContent = "Bem Vindo(a), alice.";
+            mensagemTexto.style.color = "green"
+        }
+        
+        else if (usuario === "bob" && senha === "qwerty") {
+            mensagemTexto.textContent = "Bem Vindo(a), bob.";
+            mensagemTexto.style.color = "green"
+        }
+  
+        else if (usuario === "charlie" && senha === "letmein") {
+            mensagemTexto.textContent = "Bem Vindo(a), charlie.";
+            mensagemTexto.style.color = "green"
+        }
+  
+       else {
+        mensagemTexto.textContent = "usuario ou senha invalidos"
+        mensagemTexto.style.color = "red"
+       }
+
+       if (usuario === "" && senha === "") {
+        mensagemTexto.textContent = "Todos Os Campos Precisam Ser Preenchidos"
+        mensagemTexto.style.color =  "red"
+       } 
+      }
+       
+    </script>
+
+
+</head>
+<body>
+    <form action="">
+        <label for="usuario">usuario:</label>
+        <input type="text" name="usuario" id="usuario" required><br><br>
+
+        <label for="senha">senha:</label>
+        <input type="password" name="senha" id="senha" required ><br><br>
+
+        <button type="button" onclick="validarLogin()">Login</button>
+    </form>
+
+    <p id="mensagem"></p>
+</body>
+</html>
